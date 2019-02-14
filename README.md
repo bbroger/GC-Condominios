@@ -6,7 +6,7 @@ E-mail: web.dborges@gmail.com
 
 Github: https://github.com/deeborges
 Linkedin: https://linkedin/in/deyvisonborges
-Instagram: https://instagram.com/dee.borges
+Instagram: https://instagram.com/_deyvisonborges
     
 Notas do autor:
 ///
