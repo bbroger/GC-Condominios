@@ -1,0 +1,68 @@
+'use strict'
+
+require('../models/funcionario')
+const mongoose = require('mongoose')
+const model = mongoose.model('Funcionario')
+
+const messages = require('../bin/messages/errors')
+
+class Funcionario {
+    // buscando pelo ID
+    static async getById(id) {
+        try {
+            return model.findOne({_id: id})
+        } catch(err) {
+            throw new Error(messages.generics.bd)
+        }
+    }
+    // buscando funcionarios
+    static async getAll() {
+        try {
+            return await model.find({})
+        } catch(err) {
+            throw new Error(messages.generics.bd)
+        }
+    }
+
+    // criando funcionario
+    static async create(data) {
+        try {
+            const func = await new model(data)
+            /* const data = await model.findOne(func)
+            data.scale.push() */
+            return func.save()
+        } catch(err) {
+            throw new Error(messages.generics.post)
+        }
+    }
+    
+    // verificacao antes da criacao
+    static async createVerify(data) {
+        try {
+            const { email } = data
+            return await model.findOne({ email })
+        } catch(err) {
+            throw new Error(messages.generics.post)
+        }
+    }
+
+    // atualizando funcionario
+    static async update(id, data) {
+        try {
+            return await model.findOneAndReplace(id, { $set: data })
+        } catch(err) {
+            throw new Error(messages.generics.put)
+        }
+    }
+
+    // excluindo funcionario
+    static async delete(id) {
+        try {
+            return await model.findOneAndRemove(id)
+        } catch(err) {
+            throw new Error(messages.generics.delete)
+        }
+    }
+}
+
+module.exports = Funcionario
