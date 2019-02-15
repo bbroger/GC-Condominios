@@ -1,10 +1,10 @@
 'use strict'
 
 const express = require('express')
-const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
+const bodyParser = require('body-parser')
 const handlebars = require('express-handlebars')
-const variaveis = require('./config/variaveis')
+const variaveis = require('../bin/config/variaveis')
 
 const app = express()
 
@@ -24,8 +24,11 @@ mongoose.connect(variaveis.database.connection, { useCreateIndex: true})
 mongoose.Promise = global.Promise
 
 // chamando rotas
-const funcionario_router = require('../routes/funcionario')
-app.use('/api/v1/funcionarios', funcionario_router)
+const funcionario_router = require('../src/routes/funcionario')
+const morador_router = require('../src/routes/morador')
+
+app.use('/api/funcionario', funcionario_router)
+app.use('/api/morador', morador_router)
 
 /* HOME */
 app.use('/', (req, res, next) => { 
