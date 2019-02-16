@@ -1,14 +1,14 @@
 const mongoose = require('mongoose')
-const Condominio = mongoose.Schema({
+const Blocos = mongoose.Schema({
     nome: {
         trim: true,
         required: true,
         type: String
     },
-    unidades: {
+    unidades: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Unidades'
-    }
+    }]
 })
 
-module.exports = mongoose.model('Condominio', Condominio)
+module.exports = mongoose.model('Blocos', Blocos)

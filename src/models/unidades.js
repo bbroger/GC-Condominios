@@ -7,10 +7,10 @@ const unidades = mongoose.Schema({
         required: true,
         type: Number
     },
-    morador: {
+    moradores: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Morador'
-    }
+    }]
 })
 
 module.exports = mongoose.model('Unidades', unidades)

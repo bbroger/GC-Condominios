@@ -2,7 +2,7 @@
 
 require('../models/morador');
 const mongoose = require('mongoose');
-const model = mongoose.model('Morador');
+const model = mongoose.model('Moradores');
 
 const messages = require('../messages/errors');
 

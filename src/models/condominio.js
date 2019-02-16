@@ -1,14 +1,11 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 const Condominio = mongoose.Schema({
     nome: {
         trim: true,
         required: true,
         type: String
     },
-    blocos: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Bloco'
-    }
-})
+    morador: { type: mongoose.Schema.Types.ObjectId, ref: 'Moradores', required: true }
+});
 
 module.exports = mongoose.model('Condominio', Condominio)

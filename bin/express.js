@@ -21,29 +21,32 @@ app.use(express.static('public'))
 
 // configurando conexao
 mongoose.connect(variaveis.database.connection, { useCreateIndex: true})
-mongoose.Promise = global.Promise
 
 // chamando rotas
 const funcionario_router = require('../src/routes/funcionario')
 const morador_router = require('../src/routes/morador')
+const condominio_router = require('../src/routes/condominio')
 
+app.use('/api/condominio', condominio_router)
 app.use('/api/funcionario', funcionario_router)
 app.use('/api/morador', morador_router)
 
-/* HOME */
+// rota principal
 app.use('/', (req, res, next) => { 
     res.render('pages/user/_home')
-}) // rota principal
+}) 
 
+// tratamento para erro 404
 app.use((req, res) => { 
     res.render('pages/errors/404')
-}) // tratamento para erro 404
+}) 
 
+// tratamento para demais erros
 app.use((err, req, res, next) => { 
     const message = err.message
     res.send(message)
     // res.render('pages/errors/501', {error: message})
- }) // tratamento para demais erros
+ }) 
 
 module.exports = app
 

@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const model = mongoose.Schema({
+const Morador = mongoose.Schema({
     nome: {
         trim: true,
         required: true,
@@ -26,11 +26,6 @@ const model = mongoose.Schema({
         required: true,
         type: String
     },
-    condominio: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Condominio'
-        // required: true
-    },
     bloco: {
         trim: true,
         type: String
@@ -41,4 +36,4 @@ const model = mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Morador', model)
+module.exports = mongoose.model('Moradores', Morador)
