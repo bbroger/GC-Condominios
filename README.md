@@ -1,15 +1,15 @@
-Criado por DEYVISON BORGES - Gestor de Tecnologia da Informação
-Dados: 'GC Condomínio - Sistema para gerencimento de condomínios'
-Tecnologias: JavaScript, NodeJS e MongoDB
-Licença: Open Source (Porém, seria legal se você deixa-se meu nome atribuido nos códigos.   -_* )
-E-mail: web.dborges@gmail.com
+# Criado por DEYVISON BORGES - Gestor de Tecnologia da Informação
+# Dados: 'GC Condomínio - Sistema para gerencimento de condomínios'
+# Tecnologias: JavaScript, NodeJS e MongoDB
+# Licença: Open Source (Porém, seria legal se você deixa-se meu nome atribuido nos códigos.   -_* )
+# E-mail: web.dborges@gmail.com
 
-Github: https://github.com/deeborges
-Linkedin: https://linkedin/in/deyvisonborges
-Instagram: https://instagram.com/dee.borges
+# Github: https://github.com/deeborges
+# Linkedin: https://linkedin/in/deyvisonborges
+# Instagram: https://instagram.com/_deyvisonborges
     
 Notas do autor:
-///
+
     Este é um material de meus estudos de forma autodidata.
     Você pode editar, recriar nomes de variáveis, rodar a baiana que eu nem me importo.
     Ah, mas se você quiser usar em algum trabalho de sua faculdade ou quaisquer entidades
@@ -26,4 +26,4 @@ Notas do autor:
     https://deeborges.github.io/gc-condominios
 
     Espero que goste e que ganhe muito dinheito com esse projeto.
-///
+
